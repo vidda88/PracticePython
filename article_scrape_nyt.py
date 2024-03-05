@@ -3,11 +3,11 @@ from bs4 import BeautifulSoup
 
 url = 'https://nytimes.com'
 r = requests.get(url)
-mtn = BeautifulSoup(r.text,'html.parser')
+nyt = BeautifulSoup(r.text,'html.parser')
 
 selector = 'div.css-xdandi'
 
-found = mtn.select(selector)
+found = nyt.select(selector)
 
 data = [x.text.split(';')[-1].strip() for x in found]
 
